@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW.AI for NEXT GEN | 교육 강사 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:active {
+            transform: scale(0.96);
+        }
+
+        .floating-card {
+            border: 1px solid rgba(241, 245, 249, 1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .floating-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            border-radius: 50px;
+            padding: 14px 24px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 40px;
+            transform: translateX(-50%);
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) translateY(-10px);
+        }
+
+        .blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            filter: blur(50px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-100">
+
+    <!-- Toast UI -->
+    <div id="toast">메시지 내용</div>
+
+    <!-- Background Decoration -->
+    <div class="blob top-[-100px] right-[-100px]"></div>
+    <div class="blob bottom-[20%] left-[-100px]" style="background: rgba(59, 130, 246, 0.1);"></div>
+
+    <!-- Header -->
+    <nav class="fixed top-0 w-full z-50 glass-header border-b border-slate-50">
+        <div class="max-w-md mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-extrabold tracking-tighter text-slate-900">
+                SW.AI <span class="text-indigo-600">for</span> NEXT GEN
+            </h1>
+            <button onclick="copyEmail()" class="text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full text-xs font-bold">
+                문의하기
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-md mx-auto pt-32 pb-20 px-6">
+        
+        <!-- Hero Section -->
+        <section class="text-center animate__animated animate__fadeIn">
+            <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-[13px] font-bold mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
+                </span>
+                디지털 교육의 새로운 패러다임
+            </div>
+
+            <h2 class="text-[38px] font-black leading-[1.1] mb-6 tracking-tight text-slate-900">
+                미래를 앞서가는<br>
+                <span class="gradient-text">SW AI Data 교육</span>
+            </h2>
+            
+            <p class="text-slate-500 font-medium mb-10 leading-relaxed">
+                초등부터 고등까지, 우리 아이들의<br>
+                디지털 문해력과 창의적 성장을 이끕니다.
+            </p>
+
+            <div class="flex flex-col gap-3">
+                <button onclick="copyEmail()" class="cta-button text-white py-4.5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane text-sm"></i> 강의 의뢰하기
+                </button>
+                <button onclick="showComingSoon()" class="bg-white text-slate-700 border border-slate-200 py-4.5 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-colors">
+                    커리큘럼 보기
+                </button>
+            </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <section class="mt-20">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-xl font-bold text-slate-900">연령별 교육 모델</h3>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-widest">K-12 Curricula</span>
+            </div>
+            
+            <div class="grid gap-5">
+                <!-- Elementary -->
+                <div class="floating-card bg-white p-6 rounded-[2.5rem] flex items-center gap-5">
+                    <div class="w-16 h-16 bg-blue-50 rounded-[1.5rem] flex-shrink-0 flex items-center justify-center">
+                        <i class="fas fa-puzzle-piece text-2xl text-blue-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">초등 코딩 캠프</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-snug">블록 코딩과 놀이를 통해 논리적 사고의 기초를 다집니다.</p>
+                    </div>
+                </div>
+
+                <!-- Middle -->
+                <div class="floating-card bg-white p-6 rounded-[2.5rem] flex items-center gap-5">
+                    <div class="w-16 h-16 bg-purple-50 rounded-[1.5rem] flex-shrink-0 flex items-center justify-center">
+                        <i class="fas fa-terminal text-2xl text-purple-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">중등 데이터 과학</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-snug">텍스트 코딩과 데이터 활용으로 실전 문제를 해결합니다.</p>
+                    </div>
+                </div>
+
+                <!-- High -->
+                <div class="floating-card bg-white p-6 rounded-[2.5rem] flex items-center gap-5 border-indigo-100">
+                    <div class="w-16 h-16 bg-indigo-50 rounded-[1.5rem] flex-shrink-0 flex items-center justify-center">
+                        <i class="fas fa-brain text-2xl text-indigo-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">고등 AI 프로젝트</h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-snug">머신러닝과 딥러닝 프로젝트로 진로 역량을 강화합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Identity Section -->
+        <section class="mt-20 px-4">
+            <div class="bg-slate-50 rounded-[3rem] p-10 text-center">
+                <div class="flex justify-center -space-x-3 mb-6">
+                    <div class="w-12 h-12 rounded-full border-4 border-white bg-indigo-100 flex items-center justify-center"><i class="fas fa-user-graduate text-indigo-600"></i></div>
+                    <div class="w-12 h-12 rounded-full border-4 border-white bg-blue-100 flex items-center justify-center"><i class="fas fa-chalkboard-teacher text-blue-600"></i></div>
+                    <div class="w-12 h-12 rounded-full border-4 border-white bg-purple-100 flex items-center justify-center"><i class="fas fa-laptop-code text-purple-600"></i></div>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">검증된 SW 교육 전문가</h3>
+                <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                    단순한 코딩 전달이 아닌, 아이들이 스스로<br>생각하고 구현하는 힘을 길러줍니다.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-2xl shadow-sm">
+                        <div class="text-lg font-black text-indigo-600">500+</div>
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">누적 강의 시간</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl shadow-sm">
+                        <div class="text-lg font-black text-indigo-600">120+</div>
+                        <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">참여 학생 만족도</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-md mx-auto px-6 pb-20">
+        <div class="border-t border-slate-100 pt-10 text-center">
+            <div class="flex justify-center gap-6 mb-8 text-slate-300">
+                <a href="#" class="hover:text-indigo-600 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-indigo-600 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="mailto:memile77@daum.net" class="hover:text-indigo-600 transition-colors"><i class="fas fa-envelope text-xl"></i></a>
+            </div>
+            <p class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.5em]">SW.AI for NEXT GEN © 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // 토스트 알림 함수
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.classList.add("show");
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000);
+        }
+
+        // 이메일 복사 함수
+        function copyEmail() {
+            const email = "memile77@daum.net";
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = email;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            
+            showToast("이메일 주소가 복사되었습니다! ✉️");
+        }
+
+        // 커리큘럼 안내 함수
+        function showComingSoon() {
+            showToast("상세 커리큘럼은 곧 업데이트됩니다. 📑");
+        }
+
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
