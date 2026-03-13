@@ -1,3 +1,7 @@
+
+https://hyemimoon.github.io/AI_branding/
+
+
 # **SW.AI for NEXT GEN \- 교육 강사 포트폴리오 랜딩 페이지**
 
 초등, 중등, 고등학생을 대상으로 하는 SW 및 AI 교육 전문가를 위한 모던하고 역동적인 랜딩 페이지입니다. 미래 세대(Next Gen)를 위한 교육 철학을 세련된 UI로 담아냈습니다.
