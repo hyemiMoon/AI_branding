@@ -1,6 +1,7 @@
 
 https://hyemimoon.github.io/AI_branding/
 
+구글 제미나이 이용
 
 # **SW.AI for NEXT GEN \- 교육 강사 포트폴리오 랜딩 페이지**
 
@@ -22,24 +23,6 @@ https://hyemimoon.github.io/AI_branding/
 * **Font Awesome**: 고품질 테크 아이콘 적용  
 * **Animate.css**: 선언적 애니메이션 효과
 
-## **📂 프로젝트 구조**
 
-.  
-├── landing\_page.html   \# 메인 페이지 소스 코드 (HTML/CSS/JS 통합)  
-└── README.md           \# 프로젝트 안내 문서
-
-## **💻 사용 방법**
-
-1. 이 저장소를 클론(Clone)하거나 landing\_page.html 파일을 다운로드합니다.  
-   git clone \[https://github.com/your-username/sw-ai-for-next-gen.git\](https://github.com/your-username/sw-ai-for-next-gen.git)
-
-2. 웹 브라우저에서 landing\_page.html 파일을 엽니다.  
-3. 자신의 이메일 주소나 커리큘럼 내용을 수정하여 커스텀할 수 있습니다.
-
-## **📧 문의 사항**
-
-이 프로젝트에 대한 문의나 강의 요청은 아래 메일로 연락 부탁드립니다.
-
-* **Email**: memile77@daum.net
 
 © 2024 SW.AI for NEXT GEN. All rights reserved.
