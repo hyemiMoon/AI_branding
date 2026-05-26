@@ -49,10 +49,32 @@
   <!-- Header / Navigation -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brand-100 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Logo Area (Image & Text Fallback) -->
       <div class="flex items-center space-x-3">
-        <span class="text-lg sm:text-2xl font-black tracking-wider text-brand-900">
-          SW·AI·AX <span class="text-brand-600 font-bold">for NEXT GEN</span>
-        </span>
+        <!-- 
+          [로고 이미지 추가 및 변경 안내]
+          1. 아래 <img> 태그의 src="실제_이미지_경로" 에 원하시는 로고 파일 명이나 이미지 주소(URL)를 입력해주세요.
+             (예: src="logo.png" 또는 src="https://example.com/images/logo.png")
+          2. 이미지 로딩에 성공하면 텍스트가 자동으로 숨겨지고 이미지만 깔끔하게 표시됩니다.
+          3. 이미지가 지정되지 않았거나(src가 비어있음) 로딩 오류 시, 자동으로 기존 텍스트 로고가 화면에 나타납니다.
+        -->
+        <a href="#about" class="flex items-center space-x-2.5">
+          <!-- 1. 이미지 로고 (src에 경로를 기입하면 자동으로 활성화됨) -->
+          <img 
+            src="Gemini_Generated_Image_qojaybqojaybqoja.png" 
+            alt="SW·AI·AX for NEXT GEN" 
+            class="h-8 sm:h-10 w-auto object-contain hidden" 
+            id="logo-img"
+            onload="this.classList.remove('hidden'); document.getElementById('logo-text').classList.add('hidden')"
+            onerror="this.classList.add('hidden'); document.getElementById('logo-text').classList.remove('hidden')"
+          />
+          
+          <!-- 2. 텍스트 로고 (이미지가 없을 때 백업용으로 표출되는 텍스트) -->
+          <span id="logo-text" class="text-lg sm:text-2xl font-black tracking-wider text-brand-900">
+            SW·AI·AX <span class="text-brand-600 font-bold">for NEXT GEN</span>
+          </span>
+        </a>
       </div>
       
       <!-- Desktop Navigation -->
@@ -167,7 +189,7 @@
                 src="https://docs.google.com/uc?export=view&id=1qT1P3D4c2CeKg729ayb665kV3CAbbEFs" 
                 alt="문혜미 강사 프로필 이미지" 
                 class="w-full h-full object-cover object-bottom relative z-10 transition-transform duration-700 hover:scale-105"
-                onerror="this.onerror=null; this.src='Gemini_Generated_Image_g7nzarg7nzarg7nz.png'" 
+                onerror="this.onerror=null; this.src='Gemini_Generated_Image_9cv66l9cv66l9cv6.png'" 
               />
               
               <!-- Subtle bottom gradient shadow to blend image base elegantly -->
@@ -389,7 +411,7 @@
               </div>
               <h4 class="text-lg font-bold text-brand-900 mb-4">스마트 센서 제어와 엔트리 활용</h4>
               <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                레고 스파이크 프라임을 연계하여 모터의 섬세한 기동, 다양한 입력 센서 연동, 가상 소프트웨어와의 통신을 다룹니다.
+                레고 스마트 허브를 연계하여 모터의 섬세한 기동, 다양한 입력 센서 연동, 가상 소프트웨어와의 통신을 다룹니다.
               </p>
               <ul class="space-y-3 text-xs text-slate-500">
                 <li class="flex items-start gap-2">
