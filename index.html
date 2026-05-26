@@ -61,6 +61,7 @@
         -->
         <a href="#about" class="flex items-center space-x-2.5">
           <!-- 1. 이미지 로고 (src에 경로를 기입하면 자동으로 활성화됨) -->
+           <!--
           <img 
             src="Gemini_Generated_Image_u2yxjiu2yxjiu2yx.png" 
             alt="SW·AI·AX for NEXT GEN" 
@@ -69,6 +70,16 @@
             onload="this.classList.remove('hidden'); document.getElementById('logo-text').classList.add('hidden')"
             onerror="this.classList.add('hidden'); document.getElementById('logo-text').classList.remove('hidden')"
           />
+          -->
+
+          <img 
+            src="" 
+            alt="SW·AI·AX for NEXT GEN" 
+            class="h-10 sm:h-12 md:h-14 max-w-[200px] sm:max-w-[240px] md:max-w-[280px] w-auto object-contain hidden" 
+            id="logo-img"
+            onload="this.classList.remove('hidden'); document.getElementById('logo-text').classList.add('hidden')"
+            onerror="this.classList.add('hidden'); document.getElementById('logo-text').classList.remove('hidden')"
+          />          
           
           <!-- 2. 텍스트 로고 (이미지가 없을 때 백업용으로 표출되는 텍스트) -->
           <span id="logo-text" class="text-lg sm:text-2xl font-black tracking-wider text-brand-900">
